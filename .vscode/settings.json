@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "model.h": "c"
+        "model.h": "c",
+        "test.h": "c"
     }
 }

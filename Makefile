@@ -22,6 +22,20 @@ run_table_test_p1: table_test_p1
 	./tests/program1/test-table
 
 
+# program 2
+
+branch_test_p2: tests/program2/test-branch.c program2/model.c
+	$(CC) $(CFLAGS) tests/program2/test-branch.c program2/model.c -o ./tests/program2/test-branch
+
+run_branch_test_p2: branch_test_p2
+	./tests/program2/test-branch
+
+decision_test_p2: tests/program2/test-decision.c program2/model.c
+	$(CC) $(CFLAGS) tests/program2/test-decision.c program2/model.c -o ./tests/program2/test-decision
+
+run_decision_test_p2: decision_test_p2
+	./tests/program2/test-decision
+
 clean:
 	rm -f tests/program1/test
 	rm -f tests/program2/test

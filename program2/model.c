@@ -60,12 +60,12 @@ RT_MODEL rtM_;
 RT_MODEL *const rtM = &rtM_;
 
 /* Forward declaration for local functions */
-static void exit_internal_ON(void);
-static void ModeManager(const RadioRequestMode *RadioReq_prev);
-static void enter_internal_ModeManager(void);
+void exit_internal_ON(void);
+void ModeManager(const RadioRequestMode *RadioReq_prev);
+void enter_internal_ModeManager(void);
 
 /* Function for Chart: '<Root>/CdPlayerModeManager' */
-static void exit_internal_ON(void)
+void exit_internal_ON(void)
 {
   if (rtDW.is_ON == IN_CDMode) {
     rtDW.is_Play = IN_NO_ACTIVE_CHILD;
@@ -80,7 +80,7 @@ static void exit_internal_ON(void)
 }
 
 /* Function for Chart: '<Root>/CdPlayerModeManager' */
-static void ModeManager(const RadioRequestMode *RadioReq_prev)
+void ModeManager(const RadioRequestMode *RadioReq_prev)
 {
   /* Inport: '<Root>/DiscEject' */
   if (rtU.DiscEject != 0.0) {
@@ -272,7 +272,7 @@ static void ModeManager(const RadioRequestMode *RadioReq_prev)
 }
 
 /* Function for Chart: '<Root>/CdPlayerModeManager' */
-static void enter_internal_ModeManager(void)
+void enter_internal_ModeManager(void)
 {
   switch (rtDW.was_ModeManager) {
    case IN_ON:
