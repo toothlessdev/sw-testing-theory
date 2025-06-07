@@ -1,0 +1,6 @@
+p1:(TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_4)
+p2:(TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_3)
+p3:(TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_3)
+p4:((TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_4) and !(TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_3))
+p5:(TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_3)
+p6:((TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_4) and !(TWAIT < rtDW.chartAbsoluteTimeCounter - rtDW.durationLastReferenceTick_3))
