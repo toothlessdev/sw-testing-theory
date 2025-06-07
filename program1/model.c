@@ -217,7 +217,7 @@ char* state_str[] = {"gearType_None","gearType_first","gearType_second","gearTyp
 /* Model step function */
 void model_step(void)
 {
-  printf("%s ", state_str[rtY.gear]);
+  // printf("%s ", state_str[rtY.gear]);
 
   boolean_T down;
 
@@ -345,9 +345,9 @@ void model_step(void)
     }
   }
 
-  printf("%d %d %d %d\n", rtDW.chartAbsoluteTimeCounter, 
-    rtDW.durationLastReferenceTick_3, 
-    rtDW.durationLastReferenceTick_4, TWAIT);
+  // printf("%d %d %d %d\n", rtDW.chartAbsoluteTimeCounter, 
+  //   rtDW.durationLastReferenceTick_3, 
+  //   rtDW.durationLastReferenceTick_4, TWAIT);
 
   /* End of Chart: '<Root>/Gear_logic' */
 }
