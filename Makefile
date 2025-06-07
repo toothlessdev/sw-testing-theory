@@ -15,6 +15,12 @@ boundary_test_p1: tests/program1/test-boundary.c program1/model.c
 run_boundary_test_p1: boundary_test_p1
 	./tests/program1/test-boundary
 
+table_test_p1: tests/program1/test-table.c program1/model.c
+	$(CC) $(CFLAGS) tests/program1/test-table.c program1/model.c -o ./tests/program1/test-table
+
+run_table_test_p1: table_test_p1
+	./tests/program1/test-table
+
 
 clean:
 	rm -f tests/program1/test

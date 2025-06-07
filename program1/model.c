@@ -76,6 +76,9 @@ static real_T look2_binlx(real_T u0, real_T u1, const real_T bp0[], const real_T
   bp1[], const real_T table[], const uint32_T maxIndex[], uint32_T stride);
 static void calculate_thresholds(gearType rtu_gear, real_T rtu_throttle, real_T *
   rty_down_th, real_T *rty_up_th);
+
+
+
 static real_T look2_binlx(real_T u0, real_T u1, const real_T bp0[], const real_T
   bp1[], const real_T table[], const uint32_T maxIndex[], uint32_T stride)
 {
@@ -104,7 +107,7 @@ static real_T look2_binlx(real_T u0, real_T u1, const real_T bp0[], const real_T
    */
   if (u0 <= bp0[0U]) {
     iLeft = 0U;
-    frac = (u0 - bp0[0U]) / (bp0[1U] - bp0[0U]);
+    frac = (u0 - bp0[0U]) / (bp0[1U] - bp0[0U]); // BUG
   } else if (u0 < bp0[maxIndex[0U]]) {
     /* Binary Search */
     bpIdx = maxIndex[0U] >> 1U;
@@ -248,8 +251,9 @@ void model_step(void)
     rtDW.durationLastReferenceTick_3 = rtDW.chartAbsoluteTimeCounter;
 
     /* Outputs for Function Call SubSystem: '<S1>/calculate_thresholds' */
-    // calculate_thresholds(rtY.gear, rtU.throttle, &rtDW.down_threshold,
-                         // &rtDW.up_threshold);
+    // BUG
+    calculate_thresholds(rtY.gear, rtU.throttle, &rtDW.down_threshold,
+                         &rtDW.up_threshold);
 
     /* End of Outputs for SubSystem: '<S1>/calculate_thresholds' */
     down = (rtU.speed <= rtDW.down_threshold);
